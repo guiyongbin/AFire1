@@ -1,0 +1,52 @@
+<!--pages/second/Second.wxml-->
+<scroll-view scroll-y="true" style="height:100%;width:100%;display:block" bindscrolltolower="loadingMoreEvent">
+  <swiper class="index-swiper"  indicator-dots="true" interval="1000" autoplay="true">
+    <block wx:key="unique"   wx:for="{{sliderData}}">
+      <swiper-item data-id="{{item.id}}">
+        <image src="{{item.imgsrc}}" mode="aspectFill"  style="width:100%">
+             <view class="swiper-mask"></view>
+              <view class="swiper-desc">
+                <text>{{item.title}}</text>
+              </view>
+        </image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+    <view>
+      <block wx:key="postid" wx:for="{{itemData}}">
+        <view id="{{item.postid}}" style=' display: flex;padding: 30rpx;align-items: center;border-bottom: 1rpx solid #eee;                              position: relative;padding-bottom: 40rpx;'>
+           <!--左边图片  -->
+              <view style=' width:4.2rem;height: 3rem;margin-right: 0.6rem;'>
+                <image style='width:4.2rem;height: 3rem;' src="{{item.imgsrc}}"></image>
+              </view>
+            <!--右边内容，上下结构  -->
+            <view style='flex: 1;width: 100%;overflow: hidden;'>
+                  <label style=' font-weight: 400;font-size: 26rpx;text-overflow: ellipsis;white-space:nowrap;display: block;width: 100%; margin-bottom: 20rpx;'>{{item.title}}</label>
+
+                  <!-- <text class="item-content">{{item.digest}}</text>
+                  <view style='display:flex;flex-direction:row;margin-top:8rpx'>
+                         <text class="item-from">{{item.source}}</text>
+                         <text class="item-time">{{item.ptime}}</text>
+                  </view> -->
+                  <view style='color: #999;font-size: 24rpx;line-height: 1.2;width: 100%;'>
+                    <text style=' color:#d81e06;border:1rpx solid #d81e06;padding: 2rpx ;border-radius: 4rpx;font-size:20rpxmargin-right: 20rpx;'>{{item.source}}</text>
+                    <text style='float:right; margin-right: 10rpx;'>{{ item.ptime }}</text>
+                  
+                  </view>
+              
+
+
+
+
+            </view>
+           
+
+        </view>
+      </block>
+    </view>
+
+      <image src="../../image/loading.png" hidden="{{!searchLoading}}"></image>
+      <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>  
+</scroll-view>

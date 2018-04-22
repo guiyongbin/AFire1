@@ -1,0 +1,80 @@
+/* pages/second/Second.wxss */
+.index-swiper{
+  position: relative;
+  height: 450rpx;
+}
+.swiper-mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,.3)
+}
+.swiper-desc{
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 20rpx 20rpx 50rpx 20rpx;
+  background: rgba(0,0,0,.3);
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item-logo{
+   width: 110rpx;
+   height: 110rpx;
+   margin-left: 10rpx;
+}
+.item-title{
+  width: 100%;
+  height: 10px;
+  font-size: 16rpx;
+  color: #999;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.item-content{
+  width: 100%;
+  height: 50%;
+  white-space:nowrap;
+  font-size: 20rpx;
+  color: #999;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+item-from{
+    color:#d81e06;
+  border:1rpx solid #d81e06;
+  padding: 2rpx 10rpx;
+  border-radius: 4rpx;
+  font-size:20rpx;
+  margin-right: 20rpx;
+}
+item-time{
+  margin-right: 10rpx;
+}
+.loading{  
+  padding: 10rpx;  
+  text-align: center;  
+}  
+.loading:before{  
+  display: inline-block;  
+  margin-right: 5rpx;  
+  vertical-align: middle;  
+  content: '';  
+  width: 40rpx;  
+  height: 40rpx;  
+
+  background-size: contain;  
+  animation: rotate 1s linear infinite;  
+}  
+.loading.complete:before{  
+  display: none;  
+}  
